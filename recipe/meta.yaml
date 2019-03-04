@@ -61,21 +61,22 @@ requirements:
     - ecdsa==0.13
     - ipython<6.0
 
-test:
-  imports:
-    - aiida
-    - aiida.cmdline
-    - aiida.common
-    - aiida.control
-    - aiida.restapi
-    - aiida.scheduler
-    - aiida.transport
-    - aiida.utils
-  commands:
-    - verdi help
-
 outputs:
+
   - name: aiida-core
+    test:
+      imports:
+        - aiida
+        - aiida.cmdline
+        - aiida.common
+        - aiida.control
+        - aiida.restapi
+        - aiida.scheduler
+        - aiida.transport
+        - aiida.utils
+      commands:
+        - verdi help
+
   - name: aiida-core.services
     requirements:
       run:
