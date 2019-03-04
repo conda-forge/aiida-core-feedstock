@@ -78,8 +78,9 @@ outputs:
   - name: aiida-core
   - name: aiida-core.services
     requirements:
-      - postgresql>=9.4
-      - rabbitmq-server
+      run:
+        - postgresql>=9.4
+        - rabbitmq-server
 
 about:
   home: http://aiida.net
