@@ -9,6 +9,13 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 08ebbd53455caa2269670a118066fe6d3b145b54df23ced91b74d8dfbc6c2842
 
+build:
+  number: 1
+  entry_points:
+    - verdi=aiida.cmdline.verdilib:run
+  script: "python -m pip install . --no-deps --ignore-installed -vvv "
+  skip: True  # [py > 27]
+
 requirements:
   host:
     - python
@@ -69,17 +76,7 @@ test:
 
 outputs:
   - name: aiida-core
-    build:
-      number: 1
-      entry_points:
-        - verdi=aiida.cmdline.verdilib:run
-      script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
-      skip: True  # [py > 27]
-
   - name: aiida-core.services
-    build:
-      number: 1
-      script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
     requirements:
       run:
         - postgresql>=9.4
