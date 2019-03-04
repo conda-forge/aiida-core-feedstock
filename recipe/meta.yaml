@@ -61,6 +61,13 @@ requirements:
     - ecdsa==0.13
     - ipython<6.0
 
+outputs:
+  - name: aiida-core
+  - name: aiida-core.services
+    requirements:
+      - postgresql>=9.4
+      - rabbitmq-server
+
 test:
   imports:
     - aiida
