@@ -28,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-aiida--core-green.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-aiida--core.services-green.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) |
 
 Installing aiida-core
 =====================
@@ -38,10 +39,10 @@ Installing `aiida-core` from the `conda-forge` channel can be achieved by adding
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `aiida-core` can be installed with:
+Once the `conda-forge` channel has been enabled, `aiida-core, aiida-core.services` can be installed with:
 
 ```
-conda install aiida-core
+conda install aiida-core aiida-core.services
 ```
 
 It is possible to list all of the versions of `aiida-core` available on your platform with:
