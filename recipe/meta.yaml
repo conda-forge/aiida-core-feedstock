@@ -10,10 +10,10 @@ source:
   sha256: fdc69bc25678ba4d72cdfa000867b59fbb0d72721d599685b1b29dd579545621
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - verdi=aiida.cmdline.verdilib:run
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: "python -m pip install . --no-deps --ignore-installed -vvv "
   skip: True  # [win]
 
 requirements:
@@ -59,19 +59,32 @@ requirements:
     - tornado<5.0
     - simplejson==3.16.0
 
-test:
-  imports:
-    - aiida
-    - aiida.cmdline
-    - aiida.common
-    - aiida.manage
-    - aiida.restapi
-    - aiida.scheduler
-    - aiida.transport
-  commands:
-    - verdi --help
-    - verdi --version
-    - verdi status
+outputs:
+
+  - name: aiida-core
+    test:
+      imports:
+        - aiida
+        - aiida.cmdline
+        - aiida.common
+        - aiida.manage
+        - aiida.restapi
+        - aiida.scheduler
+        - aiida.transport
+      commands:
+        - verdi --help
+        - verdi --version
+        - verdi status
+
+  - name: aiida-core.services
+    requirements:
+      run:
+        - postgresql>=9.4
+        - rabbitmq-server
+      test:
+        commands:
+          - postgres --help
+          - rabbitmqctl status
 
 about:
   home: http://aiida.net
