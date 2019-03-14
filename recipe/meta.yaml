@@ -81,10 +81,10 @@ outputs:
       run:
         - postgresql>=9.4
         - rabbitmq-server
-      test:
-        commands:
-          - postgres --help
-          - rabbitmqctl status
+    test:
+      commands:
+        - postgres --help
+        - rabbitmqctl status
 
 about:
   home: http://aiida.net
