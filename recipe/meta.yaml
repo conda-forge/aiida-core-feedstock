@@ -84,7 +84,7 @@ outputs:
     test:
       commands:
         - postgres --help
-        - rabbitmqctl status
+        - rabbitmqctl help
 
 about:
   home: http://aiida.net
