@@ -20,7 +20,7 @@ Current build status
 
 [![Linux](https://img.shields.io/circleci/project/github/conda-forge/aiida-core-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/aiida-core-feedstock)
 [![OSX](https://img.shields.io/travis/conda-forge/aiida-core-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/aiida-core-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/aiida-core-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/aiida-core-feedstock/branch/master)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
