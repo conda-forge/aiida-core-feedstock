@@ -66,8 +66,8 @@ test:
     - aiida.common
     - aiida.manage
     - aiida.restapi
-    - aiida.scheduler
-    - aiida.transport
+    - aiida.schedulers
+    - aiida.transports
   commands:
     - reentry scan -r aiida
     - verdi --help
