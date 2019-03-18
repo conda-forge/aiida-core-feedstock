@@ -59,23 +59,23 @@ requirements:
     - tornado<5.0
     - simplejson==3.16.0
 
+test:
+  imports:
+    - aiida
+    - aiida.cmdline
+    - aiida.common
+    - aiida.manage
+    - aiida.restapi
+    - aiida.scheduler
+    - aiida.transport
+  commands:
+    - verdi --help
+    - verdi --version
+    - verdi status
+
 outputs:
 
   - name: aiida-core
-    test:
-      imports:
-        - aiida
-        - aiida.cmdline
-        - aiida.common
-        - aiida.manage
-        - aiida.restapi
-        - aiida.scheduler
-        - aiida.transport
-      commands:
-        - verdi --help
-        - verdi --version
-        - verdi status
-
   - name: aiida-core.services
     requirements:
       run:
