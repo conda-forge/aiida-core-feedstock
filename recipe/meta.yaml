@@ -69,9 +69,10 @@ test:
     - aiida.scheduler
     - aiida.transport
   commands:
+    - reentry scan -r aiida
     - verdi --help
     - verdi --version
-    - verdi status
+#    - verdi status
 
 outputs:
 
