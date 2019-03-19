@@ -10,9 +10,9 @@ source:
   sha256: fdc69bc25678ba4d72cdfa000867b59fbb0d72721d599685b1b29dd579545621
 
 build:
-  number: 1
+  number: 2
   entry_points:
-    - verdi=aiida.cmdline.verdilib:run
+    - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
   skip: True  # [win]
 
@@ -59,23 +59,23 @@ requirements:
     - tornado<5.0
     - simplejson==3.16.0
 
+test:
+  imports:
+    - aiida
+    - aiida.cmdline
+    - aiida.common
+    - aiida.manage
+    - aiida.restapi
+    - aiida.schedulers
+    - aiida.transports
+  commands:
+    - reentry scan -r aiida
+    - verdi --help
+    - verdi --version
+
 outputs:
 
   - name: aiida-core
-    test:
-      imports:
-        - aiida
-        - aiida.cmdline
-        - aiida.common
-        - aiida.manage
-        - aiida.restapi
-        - aiida.scheduler
-        - aiida.transport
-      commands:
-        - verdi --help
-        - verdi --version
-        - verdi status
-
   - name: aiida-core.services
     requirements:
       run:
