@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.0.0b1" %}
+{% set version = "1.0.0b2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fdc69bc25678ba4d72cdfa000867b59fbb0d72721d599685b1b29dd579545621
+  sha256: 08ebbd53455caa2269670a118066fe6d3b145b54df23ced91b74d8dfbc6c2842 
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
@@ -52,7 +52,7 @@ requirements:
     - paramiko==2.4.2
     - ecdsa==0.13
     - ipython>=4.0,<6.0
-    - plumpy==0.12.1
+    - plumpy==0.13.1
     - kiwipy[rmq]==0.4.2
     - pika==1.0.0b1
     - circus==0.15.0
