@@ -19,7 +19,8 @@ build:
 requirements:
   host:
     - python
-    - pip
+    # remove version limit for next release
+    - pip<19.0
   run:
     - python
     - reentry==1.2.2
