@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.0.0b1" %}
+{% set version = "1.0.0b2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,19 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fdc69bc25678ba4d72cdfa000867b59fbb0d72721d599685b1b29dd579545621
+  sha256: a70c776d7c99af6b1d283b1b3046a7ac39fe9b33419dc2112d684e803f08b5ef
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
-  skip: True  # [win]
+  # remove the python limit when py37 build error is understood
+  # https://dev.azure.com/conda-forge/feedstock-builds/_build/results?buildId=30238
+  skip: True  # [win or py > 36]
 
 requirements:
   host:
     - python
-    - pip
+    # remove version limit for next release
+    - pip<19.0
   run:
     - python
     - reentry==1.2.2
@@ -52,9 +55,9 @@ requirements:
     - paramiko==2.4.2
     - ecdsa==0.13
     - ipython>=4.0,<6.0
-    - plumpy==0.12.1
-    - kiwipy[rmq]==0.4.2
-    - pika==1.0.0b1
+    - plumpy==0.13.1
+    - kiwipy[rmq]==0.5.0
+    - pika==1.0.0
     - circus==0.15.0
     - tornado<5.0
     - simplejson==3.16.0
@@ -99,3 +102,4 @@ extra:
   recipe-maintainers:
     - ltalirz
     - astamminger
+    - chrisjsewell
