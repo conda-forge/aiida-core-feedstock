@@ -63,32 +63,28 @@ requirements:
     - chainmap
     - singledispatch
 
+test:
+  imports:
+    - aiida
+    - aiida.cmdline
+    - aiida.common
+    - aiida.control
+    - aiida.restapi
+    - aiida.scheduler
+    - aiida.transport
+    - aiida.utils
+  commands:
+    - verdi help
+
 outputs:
-
   - name: aiida-core
-    test:
-      imports:
-        - aiida
-        - aiida.cmdline
-        - aiida.common
-        - aiida.control
-        - aiida.restapi
-        - aiida.scheduler
-        - aiida.transport
-        - aiida.utils
-      commands:
-        - verdi help
-
   - name: aiida-core.services
     requirements:
       run:
         - postgresql>=9.4
-        - rabbitmq-server
       test:
         commands:
           - postgres --help
-          - rabbitmqctl status
-
 
 about:
   home: http://aiida.net
