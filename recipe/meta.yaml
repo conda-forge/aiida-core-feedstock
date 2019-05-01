@@ -60,9 +60,7 @@ requirements:
     - paramiko==2.4.2
     - ecdsa==0.13
     - ipython<6.0
-    # Needed for caching. Available only on bioconda? 
-    # See https://anaconda.org/search?q=chainmap
-    # - chainmap
+    - chainmap
     - singledispatch
 
 test:
