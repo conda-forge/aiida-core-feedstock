@@ -14,7 +14,7 @@ build:
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
-  # remove the python limit when py37 build error is understood
+  # remove the python limit when the py37 build error is understood
   # https://dev.azure.com/conda-forge/feedstock-builds/_build/results?buildId=30238
   skip: True  # [win or py > 36]
 
