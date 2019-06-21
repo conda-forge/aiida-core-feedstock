@@ -10,7 +10,7 @@ source:
   sha256: c4214fe24ed8f2ff3847eb5e9798c994cde463c88cde2cb1b4bc0af90ea95fd7
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
@@ -40,8 +40,7 @@ requirements:
     - aldjemy==0.9.1
     - passlib==1.7.1
     - click==7.0
-    # NB: click-completion==0.5.1 currently not available
-    - click-completion==0.5.0
+    - click-completion==0.5.1
     - click-config-file==0.5.0
     - click-spinner==0.1.8
     - tabulate==0.8.3
@@ -55,13 +54,18 @@ requirements:
     - pika==1.0.0
     - circus==0.15.0
     - tornado<5.0
+    - pyblake2==1.1.2  # [py < 36]
+    - singledispatch>=3.4.0.3  # [py < 35]
+    - enum34==1.1.6  # [py < 35]
     - simplejson==3.16.0
+    - typing==3.6.6  # [py < 35]
 
 test:
   imports:
     - aiida
     - aiida.cmdline
     - aiida.common
+    - aiida.common.hashing
     - aiida.manage
     - aiida.restapi
     - aiida.schedulers
