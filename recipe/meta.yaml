@@ -10,7 +10,7 @@ source:
   sha256: 2ca69d8947496fefbcdd1f45dd65d6e8b929f55bc68ff88bf976afa1fe04994a
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - verdi=aiida.cmdline.verdilib:run
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - reentry==1.2.2
     - python-dateutil==2.7.2
     - python-mimeparse==1.6.0
     - django==1.7.11
@@ -74,6 +75,7 @@ test:
     - aiida.transport
     - aiida.utils
   commands:
+    - reentry scan
     - verdi help
 
 outputs:
