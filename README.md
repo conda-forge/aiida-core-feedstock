@@ -159,5 +159,6 @@ Feedstock Maintainers
 =====================
 
 * [@astamminger](https://github.com/astamminger/)
+* [@chrisjsewell](https://github.com/chrisjsewell/)
 * [@ltalirz](https://github.com/ltalirz/)
 
