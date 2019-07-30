@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - reentry==1.2.2
     - python-dateutil==2.7.2
     - python-mimeparse==1.6.0
     - django==1.7.11
