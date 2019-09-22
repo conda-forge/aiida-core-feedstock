@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.0.0b5" %}
+{% set version = "1.0.0b6" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e35a690247dd4061b86b8ddabedc9add6bd529b362a71637f954040f8bd3491
+  sha256: a66d119db0dd827f1e28b8265c0f7aa953f0aa0003472e754b146011e90e8efe
 
 build:
   number: 0
@@ -59,8 +59,8 @@ requirements:
     - enum34==1.1.6  # [py < 35]
     - simplejson==3.16.0
     - typing==3.6.6  # [py < 35]
-    - wrapt ==1.11.1
-    - python-graphviz ==0.10.1
+    - wrapt==1.11.1
+    - python-graphviz==0.10.1
 
 test:
   imports:
