@@ -14,7 +14,7 @@ build:
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: "python -m pip install . --no-deps --ignore-installed -vvv "
-  skip: True  # [win or python < 35 or python > 36]
+  skip: True  # [win or py < 35 or py > 37]
 
 requirements:
   host:
