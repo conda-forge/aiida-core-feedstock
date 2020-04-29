@@ -10,7 +10,7 @@ source:
   sha256: 0e58cac7aaf4d69d8c7b99107bec999b7b2c2f99a964e6aa1904a7f6d4148161
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: 'python -m pip install . --no-deps --ignore-installed -vvv '
@@ -75,7 +75,7 @@ outputs:
     requirements:
       run:
         - postgresql >=9.6
-        - rabbitmq-server
+        - rabbitmq-server >=3.7
     test:
       commands:
         - postgres --help
