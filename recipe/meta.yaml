@@ -10,7 +10,7 @@ source:
   sha256: cb2c9da4cff7f27005efdf15761df06a8741e222e00fdcf6f6f2c60d30708f32
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
   script: 'python -m pip install . --no-deps --ignore-installed -vvv '
