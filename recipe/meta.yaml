@@ -75,6 +75,8 @@ test:
 outputs:
   - name: aiida-core
   - name: aiida-core.services
+    build:
+      noarch: python
     requirements:
       run:
         - postgresql >=9.6
