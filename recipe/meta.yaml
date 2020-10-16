@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4742f22b2947f7503d3238100641d6321b684e0e348f297f7f104309822a236f
+  sha256: af0583cd961cbae34c046e8ebeeec0cc8a17c3b8f5ef44dd356f0b42ce6a84b8
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
