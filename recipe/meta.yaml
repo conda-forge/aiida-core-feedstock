@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4742f22b2947f7503d3238100641d6321b684e0e348f297f7f104309822a236f
+  sha256: 480a8ee0d88ae2256af8a15be7bb9f9577e233d3d9b730864a66a38f9571ec2f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
@@ -38,7 +38,7 @@ requirements:
     - numpy ~=1.17
     - paramiko ~=2.7
     - pika ~=1.1
-    - plumpy ~=0.15.0
+    - plumpy ~=0.15.1
     - pgsu ~=0.1.0
     - psutil ~=5.6
     - psycopg2 ~=2.8,>=2.8.3
