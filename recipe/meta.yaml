@@ -21,7 +21,7 @@ requirements:
     - python
     - pip
   run:
-    - python
+    - python >=3.5
     - aldjemy ~=0.9.1
     - alembic ~=1.2
     - circus ~=0.16.1
