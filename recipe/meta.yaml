@@ -10,7 +10,7 @@ source:
   sha256: bbd9c11b245dc94eb18c3f964f7727586798177ce8686f7706c06d70c8b1f5a3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
@@ -24,6 +24,7 @@ requirements:
     - python >=3.5
     - aldjemy ~=0.9.1
     - alembic ~=1.2
+    - archive-path ~=0.2.1
     - circus ~=0.16.1
     - click-completion ~=0.5.1
     - click-config-file ~=0.6.0
