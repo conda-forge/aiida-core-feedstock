@@ -10,7 +10,7 @@ source:
   sha256: bbd9c11b245dc94eb18c3f964f7727586798177ce8686f7706c06d70c8b1f5a3
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
@@ -69,6 +69,8 @@ test:
     - aiida.restapi
     - aiida.schedulers
     - aiida.transports
+    - aiida.tools
+    - aiida.tools.importexport
   commands:
     - reentry scan -r aiida
     - verdi --help
