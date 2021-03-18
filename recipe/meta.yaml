@@ -25,7 +25,7 @@ requirements:
     - aldjemy ~=0.9.1
     - alembic ~=1.2
     - archive-path ~=0.2.1
-    - aio-pika~=6.6
+    - aio-pika ~=6.6
     - circus ~=0.17.1
     - click-completion ~=0.5.1
     - click-config-file ~=0.6.0
