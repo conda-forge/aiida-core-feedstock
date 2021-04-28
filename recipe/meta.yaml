@@ -61,6 +61,8 @@ requirements:
     - aiida-core.services =={{ version }}
 
 test:
+  requires:
+    - pip
   imports:
     - aiida
     - aiida.common
@@ -75,6 +77,7 @@ test:
     - reentry scan -r aiida
     - verdi --help
     - verdi --version
+    - pip check
 
 outputs:
   - name: aiida-core
