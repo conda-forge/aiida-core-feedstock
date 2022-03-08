@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "1.6.6" %}
+{% set version = "1.6.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f9bf0e04512ab1ce31c6b50ae79d1a5894e1c55be84dcb056600a0eaab11a255
+  sha256: 27d5d0c16716693b3d5497660a71c20f0f2ffd488a1359f260657f34efd01993
 
 build:
   number: 0
@@ -38,6 +38,7 @@ requirements:
     - jinja2 ~=2.10
     - jsonschema ~=3.0
     - kiwipy[rmq] ~=0.7.4
+    - markupsafe <2.1
     - numpy ~=1.17
     - pamqp ~=2.3
     - paramiko ~=2.7,>=2.7.2
