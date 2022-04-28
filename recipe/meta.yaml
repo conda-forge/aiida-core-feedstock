@@ -19,8 +19,7 @@ build:
 requirements:
   host:
     - python
-    - pip
-    - flit-core
+    - pip >=22.0.4
   run:
     - python ~=3.8
     - alembic ~=1.2
@@ -66,7 +65,8 @@ test:
     - aiida.schedulers
     - aiida.transports
     - aiida.tools
-    - aiida.tools.importexport
+    - aiida.tools.dbexporters
+    - aiida.tools.dbimporters
   commands:
     - reentry scan -r aiida
     - verdi --help
