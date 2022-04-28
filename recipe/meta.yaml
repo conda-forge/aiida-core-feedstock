@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - flit-core
   run:
     - python ~=3.8
     - alembic ~=1.2
