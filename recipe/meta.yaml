@@ -19,7 +19,8 @@ build:
 requirements:
   host:
     - python
-    - pip >=22.0.4
+    - pip
+    - flit-core
   run:
     - python ~=3.8
     - alembic ~=1.2
