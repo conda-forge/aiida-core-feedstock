@@ -1,5 +1,5 @@
 {% set name = "aiida-core" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 82af44774e03d1b38560e9d96eedd70ca864474001f7581b5fab9db31be8ed28
+  sha256: 7b0a09bc02dee38410f6fc7dd0a679789bb60c0bcc2b75212e9668c727f6e966
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - circus ~=0.17.1
     - click-config-file ~=0.6.0
     - click-spinner ~=0.1.8
-    - click ~=8.0,>=8.0.3
+    - click ~=8.1
     - disk-objectstore ~=0.6.0
     - python-graphviz ~=0.13
     - ipython ~=7.20
