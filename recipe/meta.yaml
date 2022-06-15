@@ -10,7 +10,7 @@ source:
   sha256: 7b0a09bc02dee38410f6fc7dd0a679789bb60c0bcc2b75212e9668c727f6e966
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - verdi=aiida.cmdline.commands.cmd_verdi:verdi
