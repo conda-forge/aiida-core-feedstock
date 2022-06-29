@@ -1,82 +1,101 @@
-{% set name = "aiida-core" %}
+# version and build number
 {% set version = "2.0.1" %}
+{% set build = 1 %}
 
+# define the used meta and sub-package names
+{% set namemeta = "aiida" %}
+{% set namecore = "aiida-core" %}
+{% set nameservice = "aiida-core.services" %}
+
+# Toplevel meta-package
 package:
-  name: {{ name|lower }}
+  name: {{ namemeta|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ namecore[0] }}/{{ namecore }}/{{ namecore }}-{{ version }}.tar.gz
   sha256: 7b0a09bc02dee38410f6fc7dd0a679789bb60c0bcc2b75212e9668c727f6e966
 
 build:
-  number: 1
+  number: {{ build }}
   noarch: python
-  entry_points:
-    - verdi=aiida.cmdline.commands.cmd_verdi:verdi
-  script: 'python -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
-  host:
-    - python
-    - pip
-    - flit-core
   run:
-    - python ~=3.8
-    - alembic ~=1.2
-    - archive-path ~=0.4.0
-    - aio-pika ~=6.6
-    - circus ~=0.17.1
-    - click-config-file ~=0.6.0
-    - click-spinner ~=0.1.8
-    - click ~=8.1
-    - disk-objectstore ~=0.6.0
-    - python-graphviz ~=0.13
-    - ipython ~=7.20
-    - jinja2 ~=3.0
-    - jsonschema ~=3.0
-    - kiwipy[rmq] ~=0.7.5
-    - importlib-metadata ~=4.3
-    - numpy ~=1.19
-    - pamqp ~=2.3
-    - paramiko ~=2.7,>=2.7.2
-    - plumpy ~=0.21.0
-    - pgsu ~=0.2.1
-    - psutil ~=5.6
-    - psycopg2-binary ~=2.8
-    - pytz ~=2021.1
-    - pyyaml ~=5.4
-    - sqlalchemy ~=1.4.22
-    - tabulate ~=0.8.5
-    - tqdm ~=4.45
-    - upf_to_json ~=0.9.2
-    - wrapt ~=1.11.1
-  run_constrained:
-    - aiida-core.services =={{ version }}
-
-test:
-  requires:
-    - pip
-  imports:
-    - aiida
-    - aiida.common
-    - aiida.common.hashing
-    - aiida.manage
-    - aiida.restapi
-    - aiida.schedulers
-    - aiida.transports
-    - aiida.tools
-    - aiida.tools.dbexporters
-    - aiida.tools.dbimporters
-  commands:
-    - verdi --help
-    - verdi --version
-    - pip check
+    - {{ namecore }} =={{ version }}
+    - {{ nameservice }} =={{ version }}
 
 outputs:
-  - name: aiida-core
-  - name: aiida-core.services
+  # subpackage aiida-core
+  - name: {{ namecore }}
     build:
+      number: {{ build }}
+      noarch: python
+      entry_points:
+        - verdi=aiida.cmdline.commands.cmd_verdi:verdi
+      script: 'python -m pip install . --no-deps --ignore-installed -vvv '
+
+    requirements:
+      host:
+        - python
+        - pip
+        - flit-core
+      run:
+        - python ~=3.8
+        - alembic ~=1.2
+        - archive-path ~=0.4.0
+        - aio-pika ~=6.6
+        - circus ~=0.17.1
+        - click-config-file ~=0.6.0
+        - click-spinner ~=0.1.8
+        - click ~=8.1
+        - disk-objectstore ~=0.6.0
+        - python-graphviz ~=0.13
+        - ipython ~=7.20
+        - jinja2 ~=3.0
+        - jsonschema ~=3.0
+        - kiwipy[rmq] ~=0.7.5
+        - importlib-metadata ~=4.3
+        - numpy ~=1.19
+        - pamqp ~=2.3
+        - paramiko ~=2.7,>=2.7.2
+        - plumpy ~=0.21.0
+        - pgsu ~=0.2.1
+        - psutil ~=5.6
+        - psycopg2-binary ~=2.8
+        - pytz ~=2021.1
+        - pyyaml ~=5.4
+        - sqlalchemy ~=1.4.22
+        - tabulate ~=0.8.5
+        - tqdm ~=4.45
+        - upf_to_json ~=0.9.2
+        - wrapt ~=1.11.1
+      run_constrained:
+        -  {{ nameservice}} =={{ version }}
+    
+    test:
+      requires:
+        - pip
+      imports:
+        - aiida
+        - aiida.common
+        - aiida.common.hashing
+        - aiida.manage
+        - aiida.restapi
+        - aiida.schedulers
+        - aiida.transports
+        - aiida.tools
+        - aiida.tools.dbexporters
+        - aiida.tools.dbimporters
+      commands:
+        - verdi --help
+        - verdi --version
+        - pip check
+    
+  # subpackage for aiida-core services
+  - name: {{ nameservice }}
+    build:
+      number: {{ build }}
       noarch: python
     requirements:
       run:
