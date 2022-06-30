@@ -2,7 +2,7 @@
 {% set version = "2.0.1" %}
 {% set build = 2 %}
 
-# Set names for the AiiDA Meta-Package and acompanying Sub-Packages
+# Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
 {% set aiidacore = "aiida-core" %}
 {% set aiidaservice = "aiida-core.services" %}
@@ -35,7 +35,6 @@ outputs:
       entry_points:
         - verdi=aiida.cmdline.commands.cmd_verdi:verdi
       script: 'python -m pip install . --no-deps --ignore-installed -vvv '
-
     requirements:
       host:
         - python
@@ -73,7 +72,6 @@ outputs:
         - wrapt ~=1.11.1
       run_constrained:
         -  {{ aiidaservice}} =={{ version }}
-    
     test:
       requires:
         - pip
