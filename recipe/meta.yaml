@@ -31,7 +31,6 @@ requirements:
 outputs:
   - name: {{ aiidacore }}
     build:
-      number: {{ build }}
       noarch: python
       entry_points:
         - verdi=aiida.cmdline.commands.cmd_verdi:verdi
@@ -96,7 +95,6 @@ outputs:
     
   - name: {{ aiidaservice }}
     build:
-      number: {{ build }}
       noarch: python
     requirements:
       run:
