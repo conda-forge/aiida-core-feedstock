@@ -71,7 +71,7 @@ outputs:
         - upf_to_json ~=0.9.2
         - wrapt ~=1.11.1
       run_constrained:
-        -  {{ aiidaservice}} =={{ version }}
+        -  {{ aiidaservice }} =={{ version }}
     test:
       requires:
         - pip
