@@ -117,6 +117,7 @@ outputs:
         - pymysql ~=0.9.3
         - seekpath ~=1.9,>=1.9.3
         - spglib ~=1.14
+    test:
       requires:
         - pip
       commands:
