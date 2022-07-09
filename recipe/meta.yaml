@@ -6,6 +6,7 @@
 {% set aiidameta = "aiida" %}
 {% set aiidacore = "aiida-core" %}
 {% set aiidaservice = "aiida-core.services" %}
+{% set atomic_tools = "aiida-core.atomic_tools" %}
 
 # Define the Source and AiiDA Meta-Package
 package:
@@ -102,6 +103,24 @@ outputs:
       commands:
         - postgres --help
         - rabbitmqctl help
+
+  - name: {{ atomic_tools }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ aiidacore }} =={{ version }}
+        - ase ~=3.18
+        - matplotlib ~=3.3,>=3.3.4
+        - pycifrw ~=4.4
+        - pymatgen >=2019.7.2,<=2022.1.9,!=2019.9.7
+        - pymysql ~=0.9.3
+        - seekpath ~=1.9,>=1.9.3
+        - spglib ~=1.14
+      requires:
+        - pip
+      commands:
+        - pip check
 
 about:
   home: http://aiida.net
