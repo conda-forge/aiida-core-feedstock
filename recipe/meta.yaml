@@ -1,12 +1,12 @@
 # Set Version and Build-Number
 {% set version = "2.0.1" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
 {% set aiidacore = "aiida-core" %}
 {% set aiidaservice = "aiida-core.services" %}
-{% set atomic_tools = "aiida-core.atomic_tools" %}
+{% set aiida_atomic_tools = "aiida-core.atomic_tools" %}
 
 # Define the Source and AiiDA Meta-Package
 package:
@@ -104,12 +104,12 @@ outputs:
         - postgres --help
         - rabbitmqctl help
 
-  - name: {{ atomic_tools }}
+  - name: {{ aiida_atomic_tools }}
     build:
       noarch: python
     requirements:
       run:
-        - {{ aiidacore }} =={{ version }}
+        - {{ pin_subpackage(aiidacore, exact=True) }}
         - ase ~=3.18
         - matplotlib ~=3.3,>=3.3.4
         - pycifrw ~=4.4
