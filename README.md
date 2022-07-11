@@ -33,6 +33,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-aiida-green.svg)](https://anaconda.org/conda-forge/aiida) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida.svg)](https://anaconda.org/conda-forge/aiida) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida.svg)](https://anaconda.org/conda-forge/aiida) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida.svg)](https://anaconda.org/conda-forge/aiida) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-aiida--core-green.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida-core.svg)](https://anaconda.org/conda-forge/aiida-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-aiida--core.atomic_tools-green.svg)](https://anaconda.org/conda-forge/aiida-core.atomic_tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida-core.atomic_tools.svg)](https://anaconda.org/conda-forge/aiida-core.atomic_tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida-core.atomic_tools.svg)](https://anaconda.org/conda-forge/aiida-core.atomic_tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida-core.atomic_tools.svg)](https://anaconda.org/conda-forge/aiida-core.atomic_tools) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-aiida--core.services-green.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aiida-core.services.svg)](https://anaconda.org/conda-forge/aiida-core.services) |
 
 Installing aiida
@@ -45,16 +46,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `aiida, aiida-core, aiida-core.services` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `aiida, aiida-core, aiida-core.atomic_tools, aiida-core.services` can be installed with `conda`:
 
 ```
-conda install aiida aiida-core aiida-core.services
+conda install aiida aiida-core aiida-core.atomic_tools aiida-core.services
 ```
 
 or with `mamba`:
 
 ```
-mamba install aiida aiida-core aiida-core.services
+mamba install aiida aiida-core aiida-core.atomic_tools aiida-core.services
 ```
 
 It is possible to list all of the versions of `aiida` available on your platform with `conda`:
