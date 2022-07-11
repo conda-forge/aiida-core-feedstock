@@ -1,6 +1,6 @@
 # Set Version and Build-Number
 {% set version = "1.6.8" %}
-{% set build = 2 %}
+{% set build = 1 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
