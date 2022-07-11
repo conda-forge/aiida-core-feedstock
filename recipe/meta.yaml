@@ -73,7 +73,6 @@ outputs:
         - wrapt ~=1.11.1
       run_constrained:
         - {{ pin_subpackage(aiidaservice, exact=True) }}
-        - {{ pin_subpackage(aiida_atomic_tools, exact=True) }}
     test:
       requires:
         - pip
@@ -110,6 +109,7 @@ outputs:
       noarch: python
     requirements:
       run:
+        - {{ pin_subpackage(aiidacore, exact=True) }}
         - ase ~=3.18
         - matplotlib-base ~=3.3,>=3.3.4
         - pycifrw ~=4.4
