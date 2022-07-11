@@ -119,6 +119,8 @@ outputs:
         - {{ pin_subpackage(aiidacore, exact=True) }}
         - ase ~=3.18
         - matplotlib-base ~=3.3,>=3.3.4
+        # pandas has broken builds: https://github.com/conda-forge/pandas-feedstock/issues/137
+        - pandas !=1.4.0,!=1.4.1,!=1.4.2
         - pycifrw ~=4.4
         - pymatgen >=2019.7.2,<=2022.1.9,!=2019.9.7
         - pymysql ~=0.9.3
