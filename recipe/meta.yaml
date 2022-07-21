@@ -143,6 +143,7 @@ outputs:
         - jupyter_client ~=6.1,<6.1.13
         - jupyter ~=1.0
         - notebook ~=6.1,>=6.1.5
+        - nest-asyncio >=1.5  # see https://github.com/conda-forge/notebook-feedstock/issues/104
     test:
       requires:
         - pip
