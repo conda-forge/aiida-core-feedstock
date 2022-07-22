@@ -1,12 +1,14 @@
 # Set Version and Build-Number
 {% set version = "1.6.8" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
 {% set aiidacore = "aiida-core" %}
 {% set aiidaservice = "aiida-core.services" %}
 {% set aiida_atomic_tools = "aiida-core.atomic_tools" %}
+{% set aiida_notebook = "aiida-core.notebook" %}
+{% set aiida_rest = "aiida-core.rest" %}
 
 # Define the Source and AiiDA Meta-Package
 package:
@@ -126,6 +128,41 @@ outputs:
         - pymysql ~=0.9.3
         - seekpath ~=1.9,>=1.9.3
         - spglib ~=1.14
+    test:
+      requires:
+        - pip
+      commands:
+        - pip check
+
+  - name: {{ aiida_notebook }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(aiidacore, exact=True) }}
+        - jupyter_client ~=6.1,<6.1.13
+        - jupyter ~=1.0
+        # notebook >6.4.9 requires nest-asyncio>=1.5, but plumpy 0.20 requires nest-asyncio<1.5
+        # this is not resolved correctly though, due to https://github.com/conda-forge/notebook-feedstock/issues/104
+        - notebook >=6.1.5,<6.4.6
+    test:
+      requires:
+        - pip
+      commands:
+        - pip check
+
+  - name: {{ aiida_rest }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(aiidacore, exact=True) }}
+        - flask-cors ~=3.0
+        - flask-restful ~=0.3.7
+        - flask ~=1.1
+        - pyparsing ~=2.4
+        - python-memcached ~=1.59
+        - seekpath ~=1.9,>=1.9.3
     test:
       requires:
         - pip
