@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.0.3" %}
+{% set version = "2.0.4" %}
 {% set build = 0 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/{{ aiidacore }}-{{ version }}.tar.gz
-  sha256: 0e64f762ed75731dc63b1b682414df0fcdbeb818bc151dd912953783dabc04d7
+  sha256: 74cfcbeba53fbef24816c84393db321db32980186ce8172ad4c2bf5ef2b3a008
 
 build:
   number: {{ build }}
