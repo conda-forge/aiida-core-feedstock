@@ -46,7 +46,7 @@ outputs:
       run:
         - python ~=3.8
         - alembic ~=1.2
-        - archive-path ~=0.4.0
+        - archive-path ~=0.4.1
         - aio-pika ~=6.6
         - circus ~=0.17.1
         - click-config-file ~=0.6.0
@@ -68,11 +68,13 @@ outputs:
         - psycopg2-binary ~=2.8
         - pytz ~=2021.1
         - pyyaml ~=5.4
+        - requests ~=2.0
         - sqlalchemy ~=1.4.22
         - tabulate ~=0.8.5
         - tqdm ~=4.45
         - upf_to_json ~=0.9.2
-        - wrapt ~=1.11.1
+        - werkzeug <2.2
+        - wrapt ~=1.11
       run_constrained:
         - {{ pin_subpackage(aiidaservice, exact=True) }}
     test:
