@@ -26,8 +26,12 @@ build:
 # Packages that shall be shipped when installing from the Meta-Package are
 # defined here
 requirements:
+  # explicit python dependency required to obtain same build string
+  # as `aiida-core` package
+  host:
+    - python
   run:
-    - {{ pin_subpackage(aiidacore) }}
+    - {{ pin_subpackage(aiidacore, exact=True) }}
     - {{ pin_subpackage(aiidaservice) }}
 
 # Define the available Sub-Packages
@@ -114,7 +118,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage(aiidacore) }}
+        - {{ pin_subpackage(aiidacore, exact=True) }}
         - ase ~=3.18
         - matplotlib-base ~=3.3,>=3.3.4
         - pycifrw ~=4.4
@@ -135,7 +139,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage(aiidacore) }}
+        - {{ pin_subpackage(aiidacore, exact=True) }}
         - jupyter_client ~=6.1,<6.1.13
         - jupyter ~=1.0
         - notebook ~=6.1,>=6.1.5
@@ -152,7 +156,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage(aiidacore) }}
+        - {{ pin_subpackage(aiidacore, exact=True) }}
         - flask-cors ~=3.0
         - flask-restful ~=0.3.7
         - flask ~=2.0
