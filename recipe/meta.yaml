@@ -111,6 +111,8 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python
       run:
         - {{ pin_subpackage(aiidacore) }}
         - ase ~=3.18
@@ -130,6 +132,8 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python
       run:
         - {{ pin_subpackage(aiidacore) }}
         - jupyter_client ~=6.1,<6.1.13
@@ -145,6 +149,8 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python
       run:
         - {{ pin_subpackage(aiidacore) }}
         - flask-cors ~=3.0
