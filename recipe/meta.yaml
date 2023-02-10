@@ -27,8 +27,8 @@ build:
 # defined here
 requirements:
   run:
-    - {{ pin_subpackage(aiidacore, exact=True) }}
-    - {{ pin_subpackage(aiidaservice, exact=True) }}
+    - {{ pin_subpackage(aiidacore) }}
+    - {{ pin_subpackage(aiidaservice) }}
 
 # Define the available Sub-Packages
 outputs:
@@ -75,7 +75,7 @@ outputs:
         - werkzeug <2.2
         - wrapt ~=1.11
       run_constrained:
-        - {{ pin_subpackage(aiidaservice, exact=True) }}
+        - {{ pin_subpackage(aiidaservice) }}
     test:
       requires:
         - pip
@@ -112,7 +112,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage(aiidacore, exact=True) }}
+        - {{ pin_subpackage(aiidacore) }}
         - ase ~=3.18
         - matplotlib-base ~=3.3,>=3.3.4
         - pycifrw ~=4.4
@@ -131,7 +131,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage(aiidacore, exact=True) }}
+        - {{ pin_subpackage(aiidacore) }}
         - jupyter_client ~=6.1,<6.1.13
         - jupyter ~=1.0
         - notebook ~=6.1,>=6.1.5
@@ -146,7 +146,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - {{ pin_subpackage(aiidacore, exact=True) }}
+        - {{ pin_subpackage(aiidacore) }}
         - flask-cors ~=3.0
         - flask-restful ~=0.3.7
         - flask ~=2.0
