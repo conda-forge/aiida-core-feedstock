@@ -1,11 +1,11 @@
-About aiida
-===========
+About aiida-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/aiida-core-feedstock/blob/main/LICENSE.txt)
 
 Home: http://aiida.net
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/aiida-core-feedstock/blob/main/LICENSE.txt)
 
 Summary: AiiDA, an automated interactive infrastructure and database for computational science
 
