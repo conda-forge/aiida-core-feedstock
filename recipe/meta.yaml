@@ -16,7 +16,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/{{ aiidacore }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
   sha256: 55907ee1f396730dd93a338507409ad1ffbca951f805794b1d7cbb349ee95579
 
 build:
