@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.3.1" %}
+{% set version = "2.4.0" %}
 {% set build = 0 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: 55907ee1f396730dd93a338507409ad1ffbca951f805794b1d7cbb349ee95579
+  sha256: f6dc2bc36682ebef3ee233893374118fcb3b0153a926cdae898ba5af094412ae
 
 build:
   number: {{ build }}
@@ -48,7 +48,7 @@ outputs:
         - pip
         - flit-core
       run:
-        - python ~=3.8
+        - python ~=3.9
         - alembic ~=1.2
         - archive-path ~=0.4.2
         - aio-pika ~=6.6
@@ -59,12 +59,12 @@ outputs:
         - docstring_parser
         - get-annotations ~=0.1
         - python-graphviz ~=0.19
-        - ipython >=7, <9
+        - ipython >=7
         - jinja2 ~=3.0
         - jsonschema ~=3.0
         - kiwipy[rmq] ~=0.7.7
         - importlib-metadata ~=4.13
-        - numpy ~=1.19
+        - numpy ~=1.21
         - paramiko ~=2.7,>=2.7.2
         - plumpy ~=0.21.6
         - pgsu ~=0.2.1
@@ -125,7 +125,7 @@ outputs:
         - pymatgen >=2022.1.20
         - pymysql ~=0.9.3
         - seekpath ~=1.9,>=1.9.3
-        - spglib ~=2.0,<3.0
+        - spglib >=1.14,<3.0
     test:
       requires:
         - pip
@@ -140,7 +140,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage(aiidacore, exact=True) }}
-        - jupyter_client ~=6.1,<6.1.13
+        - jupyter_client ~=8.0
         - jupyter ~=1.0
         - notebook ~=6.1,>=6.1.5
     test:
@@ -159,7 +159,7 @@ outputs:
         - {{ pin_subpackage(aiidacore, exact=True) }}
         - flask-cors ~=3.0
         - flask-restful ~=0.3.7
-        - flask ~=2.0
+        - flask ~=2.2
         - pyparsing ~=2.4
         - python-memcached ~=1.59
         - seekpath ~=1.9,>=1.9.3
