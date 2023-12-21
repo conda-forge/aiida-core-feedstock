@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.4.2" %}
+{% set version = "2.5.0" %}
 {% set build = 0 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: fbdfeb46013c68455f4bd148a7df7853aaa927aa0b74c0467ba383543aa83e07
+  sha256: 36cc730f5b63db6785167b340e2e4bfd7a8c5e7edcc150e03c54098a1749356f
 
 build:
   number: {{ build }}
@@ -55,26 +55,26 @@ outputs:
         - circus ~=0.18.0
         - click-spinner ~=0.1.8
         - click ~=8.1
-        - disk-objectstore ~=0.6.0
+        - disk-objectstore ~=1.0
         - docstring_parser
         - get-annotations ~=0.1
         - jedi <0.19
         - python-graphviz ~=0.19
         - ipython >=7
         - jinja2 ~=3.0
-        - jsonschema ~=3.0
         - kiwipy[rmq] ~=0.7.7
-        - importlib-metadata ~=4.13
+        - importlib-metadata ~=6.0
         - numpy ~=1.21
         - paramiko ~=2.7,>=2.7.2
         - plumpy ~=0.21.6
         - pgsu ~=0.2.1
         - psutil ~=5.6
         - psycopg2-binary ~=2.8
+        - pydantic ~=2.4
         - pytz ~=2021.1
         - pyyaml ~=6.0
         - requests ~=2.0
-        - sqlalchemy ~=1.4.22
+        - sqlalchemy ~=2.0
         - tabulate ~=0.8.5
         - tqdm ~=4.45
         - upf_to_json ~=0.9.2
