@@ -1,6 +1,6 @@
 # Set Version and Build-Number
 {% set version = "2.6.3" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
@@ -16,7 +16,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
   sha256: a6b68713f43d62dea9418ad8f466cf5306a4b259a9ff5145765ef741b6c8bba9
 
 build:
@@ -29,7 +29,7 @@ requirements:
   # explicit python dependency required to obtain same build string
   # as `aiida-core` package
   host:
-    - python
+    - python {{ python_min }}
   run:
     - {{ pin_subpackage(aiidacore, exact=True) }}
     - {{ pin_subpackage(aiidaservice) }}
@@ -44,11 +44,11 @@ outputs:
       script: 'python -m pip install . --no-deps --ignore-installed -vvv '
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         - flit-core
       run:
-        - python ~=3.9
+        - python >={{ python_min }}
         - alembic ~=1.2
         - archive-path ~=0.4.2
         - aio-pika ~=6.6
@@ -84,6 +84,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - aiida
         - aiida.common
@@ -108,6 +109,8 @@ outputs:
         - postgresql >=9.6
         - rabbitmq-server >=3.7,<3.8.15
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - postgres --help
         - rabbitmqctl help
@@ -117,7 +120,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage(aiidacore, exact=True) }}
         - ase ~=3.18
@@ -130,6 +133,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
 
@@ -138,7 +142,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage(aiidacore, exact=True) }}
         - jupyter_client ~=8.0
@@ -147,6 +151,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
 
@@ -155,7 +160,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage(aiidacore, exact=True) }}
         - flask-cors ~=3.0
@@ -167,6 +172,7 @@ outputs:
     test:
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
 
