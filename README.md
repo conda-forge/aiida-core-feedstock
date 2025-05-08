@@ -152,8 +152,14 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@GeigerJ2](https://github.com/GeigerJ2/)
+* [@agoscinski](https://github.com/agoscinski/)
 * [@astamminger](https://github.com/astamminger/)
 * [@chrisjsewell](https://github.com/chrisjsewell/)
+* [@danielhollas](https://github.com/danielhollas/)
+* [@giovannipizzi](https://github.com/giovannipizzi/)
+* [@khsrali](https://github.com/khsrali/)
 * [@ltalirz](https://github.com/ltalirz/)
 * [@sphuber](https://github.com/sphuber/)
+* [@unkcpz](https://github.com/unkcpz/)
 
