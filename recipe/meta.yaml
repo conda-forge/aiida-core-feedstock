@@ -93,8 +93,7 @@ outputs:
       commands:
         - verdi --help
         - verdi --version
-        # We cannot fix the fixed dependency in aiormq see https://github.com/conda-forge/aiormq-feedstock/issues/59 so we ignore it
-        - "! pip check | grep -v pamqp"
+        - pip check
 
   - name: {{ aiidaservice }}
     build:
@@ -129,8 +128,7 @@ outputs:
         - python {{ python_min }}
         - pip
       commands:
-        # We cannot fix the fixed dependency in aiormq see https://github.com/conda-forge/aiormq-feedstock/issues/59 so we ignore it
-        - "! pip check | grep -v pamqp"
+        - pip check
 
   - name: {{ aiida_notebook }}
     build:
@@ -149,8 +147,7 @@ outputs:
         - python {{ python_min }}
         - pip
       commands:
-        # We cannot fix the fixed dependency in aiormq see https://github.com/conda-forge/aiormq-feedstock/issues/59 so we ignore it
-        - "! pip check | grep -v pamqp"
+        - pip check
 
   - name: {{ aiida_rest }}
     build:
@@ -172,8 +169,7 @@ outputs:
         - python {{ python_min }}
         - pip
       commands:
-        # We cannot fix the fixed dependency in aiormq see https://github.com/conda-forge/aiormq-feedstock/issues/59 so we ignore it
-        - "! pip check | grep -v pamqp"
+        - pip check
 
   - name: {{ aiidameta }}
     build:
@@ -191,8 +187,7 @@ outputs:
         - python {{ python_min }}
         - pip
       commands:
-        # We cannot fix the fixed dependency in aiormq see https://github.com/conda-forge/aiormq-feedstock/issues/59 so we ignore it
-        - "! pip check | grep -v pamqp"
+        - pip check
 
 about:
   home: http://aiida.net
