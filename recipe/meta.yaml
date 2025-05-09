@@ -101,7 +101,7 @@ outputs:
     requirements:
       run:
         - postgresql >=9.6
-        - rabbitmq-server >=3.11
+        - rabbitmq-server >=3.7,<3.8.15
     test:
       commands:
         - postgres --help
