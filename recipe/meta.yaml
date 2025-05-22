@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.7.0rc1" %}
+{% set version = "2.6.4" %}
 {% set build = 0 %}
 
 # Set package metainfo
@@ -20,7 +20,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: 70a430947325987323031c8873d0a6ffd12d6369b72a29bda475e5d43074d12d
+  sha256: 89265dfc120b74c36765b9a7adec81a586a45f46b5c8a356ba9d93cd43b3b3ee
 
 build:
   number: {{ build }}
@@ -43,36 +43,34 @@ outputs:
         - python >={{ python_min }}
         - alembic ~=1.2
         - archive-path ~=0.4.2
-        - asyncssh ~=2.19.0
-        - circus ~=0.19.0
+        - aio-pika ~=6.6
+        - circus ~=0.18.0
         - click-spinner ~=0.1.8
-        - click ~=8.1
-        - disk-objectstore ~=1.3.0
+        - click ~=8.1.0
+        - disk-objectstore ~=1.1
         - docstring_parser
         - get-annotations ~=0.1
-        - python-graphviz ~=0.19
-        - plumpy ~=0.25.0
-        - ipython >=7
         - jedi <0.19
+        - python-graphviz ~=0.19
+        - ipython >=7
         - jinja2 ~=3.0
-        - kiwipy[rmq] ~=0.8.4
+        - kiwipy[rmq] ~=0.7.7
         - importlib-metadata ~=6.0
         - numpy ~=1.21
-        - paramiko ~=3.0
-        - pgsu ~=0.3.0
+        - paramiko ~=2.7,>=2.7.2
+        - plumpy ~=0.21.6
+        - pgsu ~=0.2.1
         - psutil ~=5.6
-        - psycopg[binary] ~=3.0
+        - psycopg2-binary ~=2.8
         - pydantic ~=2.4
         - pytz ~=2021.1
         - pyyaml ~=6.0
         - requests ~=2.0
         - sqlalchemy ~=2.0
-        - tabulate <0.10.0,>=0.8.0
+        - tabulate >=0.8.0,<0.10.0
         - tqdm ~=4.45
-        - typing-extensions ~=4.0
         - upf_to_json ~=0.9.2
         - wrapt ~=1.11
-        - chardet ~=5.2.0
       run_constrained:
         - {{ pin_subpackage(aiidaservice) }}
     test:
