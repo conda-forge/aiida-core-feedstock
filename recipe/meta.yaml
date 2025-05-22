@@ -1,6 +1,9 @@
 # Set Version and Build-Number
-{% set version = "2.6.3" %}
-{% set build = 2 %}
+{% set version = "2.6.4" %}
+{% set build = 0 %}
+
+# Set package metainfo
+{% set python_min = "3.9" %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
@@ -16,8 +19,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: a6b68713f43d62dea9418ad8f466cf5306a4b259a9ff5145765ef741b6c8bba9
+  url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
+  sha256: 89265dfc120b74c36765b9a7adec81a586a45f46b5c8a356ba9d93cd43b3b3ee
 
 build:
   number: {{ build }}
@@ -43,7 +46,7 @@ outputs:
         - aio-pika ~=6.6
         - circus ~=0.18.0
         - click-spinner ~=0.1.8
-        - click ~=8.1
+        - click ~=8.1.0
         - disk-objectstore ~=1.1
         - docstring_parser
         - get-annotations ~=0.1
