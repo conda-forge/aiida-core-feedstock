@@ -49,6 +49,7 @@ outputs:
         - click ~=8.1.0
         - disk-objectstore ~=1.3.0
         - docstring_parser
+        - get-annotations ~=0.1
         - python-graphviz ~=0.19
         - plumpy ~=0.25.0
         - ipython >=7
