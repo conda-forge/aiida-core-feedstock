@@ -1,6 +1,6 @@
 # Set Version and Build-Number
 {% set version = "2.7.1" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 # Set package metainfo
 {% set python_min = "3.9" %}
@@ -38,7 +38,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - flit-core
+        - flit-core >=3.4,<4
       run:
         - python >={{ python_min }}
         - alembic ~=1.2
@@ -46,7 +46,7 @@ outputs:
         - asyncssh ~=2.19.0
         - circus ~=0.19.0
         - click-spinner ~=0.1.8
-        - click ~=8.1
+        - click ~=8.1.0
         - disk-objectstore ~=1.3.0
         - docstring_parser
         - get-annotations ~=0.1
@@ -55,13 +55,13 @@ outputs:
         - ipython >=7
         - jedi <0.19
         - jinja2 ~=3.0
-        - kiwipy[rmq] ~=0.8.4
+        - kiwipy ~=0.8.4
         - importlib-metadata ~=6.0
         - numpy ~=1.21
         - paramiko ~=3.0
         - pgsu ~=0.3.0
         - psutil ~=5.6
-        - psycopg[binary] ~=3.0
+        - psycopg ~=3.0
         - pydantic ~=2.4
         - pytz ~=2021.1
         - pyyaml ~=6.0
