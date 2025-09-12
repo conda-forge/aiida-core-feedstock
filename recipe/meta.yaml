@@ -38,7 +38,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - flit-core >=3.4, <4
+        - flit-core >=3.4,<4
       run:
         - python >={{ python_min }}
         - alembic ~=1.2
