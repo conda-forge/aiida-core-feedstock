@@ -159,7 +159,6 @@ Feedstock Maintainers
 * [@danielhollas](https://github.com/danielhollas/)
 * [@giovannipizzi](https://github.com/giovannipizzi/)
 * [@khsrali](https://github.com/khsrali/)
-* [@ltalirz](https://github.com/ltalirz/)
 * [@sphuber](https://github.com/sphuber/)
 * [@unkcpz](https://github.com/unkcpz/)
 
