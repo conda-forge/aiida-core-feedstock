@@ -200,12 +200,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - astamminger
-    - chrisjsewell
-    - sphuber
     - agoscinski
-    - unkcpz
     - khsrali
     - GeigerJ2
     - giovannipizzi
     - danielhollas
+    - edan-bainglass
