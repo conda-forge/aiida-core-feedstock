@@ -1,9 +1,9 @@
 # Set Version and Build-Number
-{% set version = "2.8.0" %}
+{% set version = "2.9.0rc0" %}
 {% set build = 0 %}
 
 # Set package metainfo
-{% set python_min = "3.9" %}
+{% set python_min = "3.10" %}
 
 # Set names for the AiiDA Meta-Package and accompanying Sub-Packages
 {% set aiidameta = "aiida" %}
@@ -20,7 +20,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: 3d8c38ed14a5b6d9bc58e1c74a22fe9e24fe913ca7c8532eab190bda68893fb2
+  sha256: 2690d2fe0900c16b0da945a7d86b5a9f0e71f6cd2b51bbabf43ca84a4183efff
 
 build:
   number: {{ build }}
@@ -43,26 +43,24 @@ outputs:
         - python >={{ python_min }}
         - alembic ~=1.8
         - archive-path ~=0.4.2
-        - asyncssh ~=2.21.0
+        - asyncssh ~=2.22.0
         - circus ~=0.19.0
         - click-spinner ~=0.1.8
         - click <8.3,>=8.1.0
         - disk-objectstore ~=1.5.0
         - docstring_parser
-        - get-annotations ~=0.1
         - python-graphviz ~=0.19
         - plumpy ~=0.26.0
         - ipython >=7.6
         - jedi <0.19
         - jinja2 ~=3.0
         - kiwipy[rmq] ~=0.9.0
-        - importlib-metadata ~=6.0
         - numpy <3,>=1.21
         - paramiko ~=3.0
         - pgsu ~=0.3.0
         - psutil ~=7.0
         - psycopg[binary] <4,>=3.0.2
-        - pydantic ~=2.6
+        - pydantic ~=2.12
         - pytz ~=2021.1
         - pyyaml ~=6.0
         - requests ~=2.0
