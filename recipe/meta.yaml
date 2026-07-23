@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.9.0rc0" %}
+{% set version = "2.9.0rc1" %}
 {% set build = 0 %}
 
 # Set package metainfo
@@ -20,7 +20,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: 2690d2fe0900c16b0da945a7d86b5a9f0e71f6cd2b51bbabf43ca84a4183efff
+  sha256: a56c60c60c9191736382998a4b0f844494ea15a7e96332db5a62277291dcce2d
 
 build:
   number: {{ build }}
@@ -55,6 +55,7 @@ outputs:
         - jedi <0.19
         - jinja2 ~=3.0
         - kiwipy[rmq] ~=0.9.0
+        - importlib-metadata ~=6.0
         - numpy <3,>=1.21
         - paramiko ~=3.0
         - pgsu ~=0.3.0
