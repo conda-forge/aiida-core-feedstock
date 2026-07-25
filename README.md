@@ -17,10 +17,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2337&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aiida-core-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/aiida-core-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/aiida-core-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -154,11 +155,8 @@ Feedstock Maintainers
 
 * [@GeigerJ2](https://github.com/GeigerJ2/)
 * [@agoscinski](https://github.com/agoscinski/)
-* [@astamminger](https://github.com/astamminger/)
-* [@chrisjsewell](https://github.com/chrisjsewell/)
 * [@danielhollas](https://github.com/danielhollas/)
+* [@edan-bainglass](https://github.com/edan-bainglass/)
 * [@giovannipizzi](https://github.com/giovannipizzi/)
 * [@khsrali](https://github.com/khsrali/)
-* [@sphuber](https://github.com/sphuber/)
-* [@unkcpz](https://github.com/unkcpz/)
 
