@@ -1,5 +1,5 @@
 # Set Version and Build-Number
-{% set version = "2.9.2" %}
+{% set version = "2.9.3" %}
 {% set build = 0 %}
 
 # Set package metainfo
@@ -20,7 +20,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ aiidacore[0] }}/{{ aiidacore }}/aiida_core-{{ version }}.tar.gz
-  sha256: f5e39b83daa3aba9acee6e90cc63fbc31b9e6b572f3a18316863230d18aca29c
+  sha256: 2b1de2781de5b789516da683ae82646e6708f08a6b2d2503979435b8ff1d8070
 
 build:
   number: {{ build }}
@@ -43,7 +43,7 @@ outputs:
         - python >={{ python_min }}
         - alembic ~=1.8
         - archive-path ~=0.4.2
-        - asyncssh ~=2.22.0
+        - asyncssh ~=2.22
         - circus ~=0.19.0
         - click-spinner ~=0.1.8
         - click <8.3,>=8.1.0
