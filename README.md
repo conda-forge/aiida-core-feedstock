@@ -199,7 +199,6 @@ Feedstock Maintainers
 
 * [@GeigerJ2](https://github.com/GeigerJ2/)
 * [@agoscinski](https://github.com/agoscinski/)
-* [@danielhollas](https://github.com/danielhollas/)
 * [@edan-bainglass](https://github.com/edan-bainglass/)
 * [@giovannipizzi](https://github.com/giovannipizzi/)
 * [@khsrali](https://github.com/khsrali/)
