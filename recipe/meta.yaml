@@ -1,6 +1,6 @@
 # Set Version and Build-Number
 {% set version = "2.9.3" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 # Set package metainfo
 {% set python_min = "3.10" %}
@@ -41,6 +41,7 @@ outputs:
         - flit-core >=3.4,<4
       run:
         - python >={{ python_min }}
+        - aio-pika ~= 9.5.0
         - alembic ~=1.8
         - archive-path ~=0.4.2
         - asyncssh ~=2.22
